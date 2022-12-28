@@ -1,0 +1,29 @@
+{
+  "name": "gorest-nuxt",
+  "version": "1.0.0",
+  "description": "Nuxt app demonstrating CRUD fuctionality using the GO REST API",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.2.0",
+    "daisyui": "^2.46.0",
+    "nuxt": "3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RDrohan/gorest-nuxt.git"
+  },
+  "author": "Ricky Drohan",
+  "keywords": [
+    "nuxt",
+    "gorest",
+    "tailwind",
+    "daisyui"
+  ]
+}
