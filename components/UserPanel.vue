@@ -15,19 +15,29 @@
       <div :class="genderClass">{{ user.gender }}</div>
     </div>
     <div>
-      <div class="btn-group">
-        <button class="btn btn-sm md:btn-md">See Posts</button>
-        <button class="btn btn-sm md:btn-md">See Todos</button>
+      <div :class="mode === 'all' ? 'btn-group' : ''">
+        <NuxtLink
+          v-show="mode === 'all' || mode === 'todos'"
+          to="/"
+          class="btn btn-sm md:btn-md"
+          >See Posts</NuxtLink
+        >
+        <NuxtLink
+          v-show="mode === 'all' || mode === 'posts'"
+          :to="`/todos/${user.id}`"
+          class="btn btn-sm md:btn-md"
+          >See Todos</NuxtLink
+        >
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-const { user } = defineProps(["user"]);
+const { user, mode } = defineProps(["user", "mode"]);
 const avatarClass =
   user.status === "active" ? "avatar online" : "avatar offline";
-const avatarImage = user.gender === "male" ? "male.png" : "female.png";
+const avatarImage = user.gender === "male" ? "/male.png" : "/female.png";
 const genderClass =
   user.gender === "male"
     ? "badge badge-info capitalize mt-2"
