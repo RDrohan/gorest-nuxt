@@ -1,8 +1,17 @@
 <template>
   <div class="mx-auto">
     <UserPanel :user="user" mode="todos" />
-    <div v-for="t in todos" class="mt-4">
-      <Todo :todo="t" />
+    <div class="mt-4">
+      <div v-if="!todos.length">
+        <h1 class="text-md font-bold text-center">
+          {{ user.name }} has no todos yet.
+        </h1>
+      </div>
+      <div v-else>
+        <div v-for="t in todos">
+          <Todo :todo="t" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
