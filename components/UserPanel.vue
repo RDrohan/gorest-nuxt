@@ -18,7 +18,7 @@
       <div :class="mode === 'all' ? 'btn-group' : ''">
         <NuxtLink
           v-show="mode === 'all' || mode === 'todos'"
-          to="/"
+          :to="`/posts/${user.id}`"
           class="btn btn-sm md:btn-md"
           >See Posts</NuxtLink
         >

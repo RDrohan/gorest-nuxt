@@ -1,8 +1,8 @@
 <template>
   <div class="mx-auto">
-    <UserPanel :user="user" mode="todos" />
-    <div v-for="t in todos" class="mt-4">
-      <Todo :todo="t" />
+    <UserPanel :user="user" mode="posts" />
+    <div v-for="p in posts" class="mt-4">
+      <Post :post="p" />
     </div>
   </div>
 </template>
@@ -12,5 +12,5 @@ const { userId } = useRoute().params;
 
 const { data: user } = await useFetch(`/api/users/${userId}`);
 
-const { data: todos } = await useFetch(`/api/todos/${userId}`);
+const { data: posts } = await useFetch(`/api/posts/${userId}`);
 </script>
