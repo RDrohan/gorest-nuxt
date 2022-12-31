@@ -1,5 +1,6 @@
 <template>
   <div class="mx-auto">
+    <BackButton />
     <Post :post="post" mode="comment" />
     <div class="mt-4">
       <div v-if="!comments.length">

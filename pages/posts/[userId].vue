@@ -1,5 +1,6 @@
 <template>
   <div class="mx-auto">
+    <BackButton />
     <UserPanel :user="user" mode="posts" />
     <div class="mt-4">
       <div v-if="!posts.length">
